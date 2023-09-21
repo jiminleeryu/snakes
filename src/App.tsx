@@ -5,8 +5,8 @@ import Monitor from "./monitor.png"
 import useInterval from "./useInterval"
 import Drake from "./studio.jpg"
 
-const canvasX = 1000
-const canvasY = 1000
+const canvasX = 800
+const canvasY = 800
 const initialSnake = [ [ 4, 10 ], [ 4, 10 ] ]
 const initialApple = [ 14, 10 ]
 const scale = 50
@@ -120,12 +120,13 @@ function App() {
 			<button onClick={play} className="playButton">
 				Play
 			</button>
-			  <div className="scoreBox">
+		  </div>
+      <div className="scoreBox">
 				  <h2>Score: {score}</h2>
 				  <h2>High Score: {localStorage.getItem("snakeScore")}</h2>
 			  </div>
-		  </div>
     </div>
+    
 	)
 }
 
