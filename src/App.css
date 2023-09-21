@@ -4,6 +4,7 @@ body {
 }
 
 .playArea {
+  background-color: black;
 	border: 5px solid;
 	width: 650px;
 	height: 470px;
@@ -37,18 +38,22 @@ body {
 }
 .playButton {
 	position: fixed;
-	top: 80%;
+	top: 75%;
 	left: 50%;
+  width: 10%;
 	transform: translate(-50%, -50%);
 	color: white;
-	background: #502c7b;
+	background: #4f754a;
 	border: 2px solid white;
 	padding: 10px;
 	font-size: 0.9em;
 	color: white;
-	box-shadow: 4px 4px 0px 0px white;
 	font-weight: 700;
 	text-transform: uppercase;
+}
+
+.playButton:hover{
+  background-color: #7db676;
 }
 
 .scoreBox {
@@ -76,4 +81,14 @@ img {
 .image-container {
   position: relative;
   width: 100%;
+}
+
+.gif-overlay img {
+  position: absolute;
+  top: 9%;
+  left: 8%;
+  transform: translate(-50%, -50%);
+  width: 60%; /* Adjust the width of the GIF overlay as needed */
+  z-index: 2; /* Ensure it appears above the image */
+  pointer-events: none; 
 }

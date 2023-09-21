@@ -4,6 +4,7 @@ import AppleLogo from "./applePixels.png"
 import Monitor from "./monitor.png"
 import useInterval from "./useInterval"
 import Drake from "./studio.jpg"
+import gif from "./fatd_1920x1080.gif"
 
 const canvasX = 800
 const canvasY = 800
@@ -125,6 +126,9 @@ function App() {
 				  <h2>Score: {score}</h2>
 				  <h2>High Score: {localStorage.getItem("snakeScore")}</h2>
 			  </div>
+        <div className="gif-overlay">
+        <img style={{ width: 200, height: 200 }} src={gif} alt = "logo"/>
+      </div>
     </div>
     
 	)
