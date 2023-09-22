@@ -119,7 +119,7 @@ function App() {
 	}
 
 	useEffect(() => {
-		axios.get('/players/highest-score')
+		axios.get('/score')
 	  .then((response) => {
 		setScore(response.data);
 	  })

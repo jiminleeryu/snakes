@@ -14,7 +14,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
-app.post("/scores", async (req, res) => {
+app.post("/score", async (req, res) => {
     const collection = db.collection("scores");
 
     const scoreData = req.body;
