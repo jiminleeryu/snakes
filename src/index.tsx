@@ -4,6 +4,26 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const addScore = async (username: string, score: number) => {
+  try {
+    const response = await fetch('/api/scores', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, score }),
+    });
+
+    if (response.ok) {
+      console.log('Score added successfully');
+    } else {
+      console.error('Failed to add score');
+    }
+  } catch (error) {
+    console.error('Error adding score:', error);
+  }
+};
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

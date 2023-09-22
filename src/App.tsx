@@ -5,19 +5,7 @@ import Monitor from "./monitor.png"
 import useInterval from "./useInterval"
 import Drake from "./studio.jpg"
 import gif from "./fatd_1920x1080.gif"
-
-// const { MongoClient } = require("mongodb");
-
-// const uri =
-//     "mongodb+srv://jiminleeryu:FSAB@cluster0.n8ocn3q.mongodb.net/";
-// const client = new MongoClient(uri);
-// await client.connect();
-// const dbName = "dbScores";
-// const collectionName = "score";
-
-// const database = client.db(dbName);
-// const collection = database.collection(collectionName);
-
+import axios from 'axios';
 
 const canvasX = 800
 const canvasY = 800
@@ -25,6 +13,11 @@ const initialSnake = [ [ 4, 10 ], [ 4, 10 ] ]
 const initialApple = [ 14, 10 ]
 const scale = 50
 const timeDelay = 100
+
+interface Props{
+    score : number;
+	children?: React.ReactNode;
+}
 
 function App() {
 	const canvasRef = useRef<HTMLCanvasElement | null>(null)
@@ -124,6 +117,16 @@ function App() {
 				break
 		}
 	}
+
+	useEffect(() => {
+		axios.get('/players/highest-score')
+	  .then((response) => {
+		setScore(response.data);
+	  })
+	  .catch((e) => {
+		console.log(e);
+	  })
+	}, [gameOver]);
 
 	return (
     <div className="image-container">
