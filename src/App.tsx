@@ -6,6 +6,19 @@ import useInterval from "./useInterval"
 import Drake from "./studio.jpg"
 import gif from "./fatd_1920x1080.gif"
 
+// const { MongoClient } = require("mongodb");
+
+// const uri =
+//     "mongodb+srv://jiminleeryu:FSAB@cluster0.n8ocn3q.mongodb.net/";
+// const client = new MongoClient(uri);
+// await client.connect();
+// const dbName = "dbScores";
+// const collectionName = "score";
+
+// const database = client.db(dbName);
+// const collection = database.collection(collectionName);
+
+
 const canvasX = 800
 const canvasY = 800
 const initialSnake = [ [ 4, 10 ], [ 4, 10 ] ]
@@ -59,10 +72,12 @@ function App() {
 
 	function checkCollision(head: number[]) {
 		for (let i = 0; i < head.length; i++) {
-			if (head[i] < 0 || head[i] * scale >= canvasX) return true
+			if (head[i] < 0 || head[i] * scale >= canvasX) 
+			return true
 		}
 		for (const s of snake) {
-			if (head[0] === s[0] && head[1] === s[1]) return true
+			if (head[0] === s[0] && head[1] === s[1]) 
+			return true
 		}
 		return false
 	}
